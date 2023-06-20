@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+var url = "https://www.example.com";
+var width = 800;
+var height = 600;
+openNewWindow(url, width, height);
+
+
+
+function openNewWindow(url, width, height) {
+  var left = (window.innerWidth - width) / 2;
+  var top = (window.innerHeight - height) / 2;
+  var windowFeatures = "width=" + width + ",height=" + height + ",left=" + left + ",top=" + top;
+  window.open(url, "_blank", windowFeatures);
+}
+
+    </script>
+</body>
+</html>

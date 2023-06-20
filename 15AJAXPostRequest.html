@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<p>AJAX Post Request</p>
+
+    <script>
+
+async function sendPostRequest() {
+    let URL = `https://api.example.com/submit`;
+
+const payload = {
+name: 'John Doe',
+email: 'johndoe@example.com'
+};
+
+let res = await axios.post(URL,payload);
+if(res.status===200){
+alert('success');
+}
+else {
+  alert("error")
+}
+}
+
+sendPostRequest();
+          
+    </script>
+</body>
+</html>

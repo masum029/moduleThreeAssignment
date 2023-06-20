@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        function detectBrowser() {
+  var browserName = "";
+  var browserVersion = "";
+
+  var userAgent = navigator.userAgent;
+  var browserData = userAgent.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+
+  if (/trident/i.test(browserData[1])) {
+    browserVersion = /\brv[ :]+(\d+)/g.exec(userAgent) || [];
+    browserName = "Internet Explorer";
+  }
+
+  if (browserData[1] === "Chrome") {
+    browserVersion = userAgent.match(/\b(OPR|Edge)\/(\d+)/);
+    if (browserVersion !== null) {
+      browserName = browserVersion[1].replace("OPR", "Opera");
+      browserVersion = browserVersion[2];
+    } else {
+      browserName = "Chrome";
+      browserVersion = userAgent.match(/\b(Chrome)\/(\d+)/)[2];
+    }
+  }
+
+  if (browserData[1] === "Safari") {
+    var safariVersion = userAgent.match(/\bVersion\/(\d+)/);
+    if (safariVersion !== null) {
+      browserName = "Safari";
+      browserVersion = safariVersion[1];
+    }
+  }
+
+  if (browserData[1] === "Firefox") {
+    browserName = "Firefox";
+    browserVersion = userAgent.match(/\bFirefox\/(\d+)/)[1];
+  }
+
+  if (browserData[1] === "Opera") {
+    browserName = "Opera";
+    browserVersion = userAgent.match(/\bVersion\/(\d+)/)[1];
+  }
+
+  return {
+    name: browserName,
+    version: browserVersion
+  };
+}
+
+
+var browserInfo = detectBrowser();
+console.log("Browser Name:", browserInfo.name);
+console.log("Browser Version:", browserInfo.version);
+
+    </script>
+</body>
+</html>

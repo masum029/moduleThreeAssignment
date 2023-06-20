@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+ <script src="JS/axios.min.js"></script>   
+
+<script>
+   
+    async function sendGetRequest() {
+        
+        let URL="https://api.example.com/data";
+        let res=await axios.get(URL);
+        
+        if(res.status===200){
+               let resData= 'success';//res.data['data'];
+               console.log(resData);
+               alert('susccsess')
+        }
+        else{
+            alert("Failed")
+        }
+    }
+
+    sendGetRequest();
+
+    </script>
+</body>
+</html>
