@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p style="font-weight: bold; ">Implement a JavaScript function that retrieves the user's current location (latitude and longitude) using the geolocation API</p>
+
+
+<p id="demo"></p>
+
+<script>
+
+getLocation();
+
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Current Latitude: " + position.coords.latitude + 
+  "<br> Current Longitude: " + position.coords.longitude;
+}
+
+
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Change Text Color</title>
+  <style>
+    .red-text {
+      color: red;
+    }
+  </style>
+  <script>
+    function changeTextColor() {
+      var paragraphs = document.querySelectorAll(".red-text");
+      paragraphs.forEach(function(paragraph) {
+        paragraph.style.color = "red";
+      });
+    }
+  </script>
+</head>
+<body>
+  <h1>Change Text Color</h1>
+  <p class="red-text">This paragraph has the class "red-text" and its text color will be changed.</p>
+  <p id="paragraph1">This paragraph has an ID but no class.</p>
+  <p class="red-text">This paragraph also has the class "red-text" and its text color will be changed.</p>
+  <p id="paragraph2">This paragraph has an ID but no class.</p>
+  <button onclick="changeTextColor()">Change Text Color</button>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamically Create List Items</title>
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      var ul = document.querySelector('ul'); // Get the unordered list element
+      
+      for (var i = 1; i <= 5; i++) {
+        var li = document.createElement('li'); // Create a new list item element
+        li.textContent = i; // Set the text content to the sequential number
+        
+        ul.appendChild(li); // Append the list item to the unordered list
+      }
+    });
+  </script>
+</head>
+<body>
+    <h1>Question 11</h1>
+    <h3>Create a webpage with an empty unordered list ul.</h3>
+
+  <ul></ul>
+</body>
+</html>
